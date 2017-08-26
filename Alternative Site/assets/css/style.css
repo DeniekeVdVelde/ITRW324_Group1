@@ -21,27 +21,7 @@ h1, h2 { margin-top: 10px; font-size: 38px; font-weight: 100; color: #555; line-
 h3 { font-size: 22px; font-weight: 300; color: #555; line-height: 30px; }
 
 img { max-width: 100%; }
-.article-wrap: {
-          left: 0;
-         top: 0;
-		overflow: 'hidden';
-         margin: 0;
-         padding: 0;
-         height: '100%';
-         zIndex: -999999;
-      }
-.article-image: {
-	 position: 'absolute';
-         display: 'none';
-         margin: 0;
-         padding: 0;
-         border: 'none';
-         width: 'auto';
-         height: 'auto';
-         maxHeight: 'none';
-         maxWidth: 'none';
-         zIndex: -999999;
-}
+
 .medium-paragraph { font-size: 18px; line-height: 32px; }
 
 .colored-text { color: #ca8bdc; }
