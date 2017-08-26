@@ -15,11 +15,13 @@ a, a:hover, a:focus {
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
 
+
+
 h1, h2 { margin-top: 10px; font-size: 38px; font-weight: 100; color: #555; line-height: 50px; }
 h3 { font-size: 22px; font-weight: 300; color: #555; line-height: 30px; }
 
 img { max-width: 100%; }
-
+.article-icon{}
 .medium-paragraph { font-size: 18px; line-height: 32px; }
 
 .colored-text { color: #ca8bdc; }
@@ -59,7 +61,7 @@ ul.navbar-nav { font-size: 16px; color: #fff; }
 .navbar-inverse ul.navbar-nav li a:focus { color: #ca8bdc; outline: 0; }
 
 .navbar-brand {
-	width: 95px;
+	width: 120px;
 	background: url(../img/logo.png) left center no-repeat;
 	text-indent: -99999px;
 }
