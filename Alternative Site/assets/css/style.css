@@ -43,7 +43,15 @@ img { max-width: 100%; }
 
 
 /***** Top menu *****/
-
+.left-text {
+	text-align: left;
+}
+.right-text {
+	text-align: right;
+}
+.green-text {
+	color: green;
+}
 .navbar {
 	margin-bottom: 0;
 	background: #444;
