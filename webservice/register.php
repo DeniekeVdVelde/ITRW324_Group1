@@ -1,5 +1,5 @@
 <?php
-	include_once('confi.php');
+	include_once('db_config.php');
 	error_reporting(E_ALL);
 	//Get the variables
 	$username = isset($_GET['username']) ?

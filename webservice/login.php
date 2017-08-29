@@ -1,5 +1,6 @@
 <?php
-
+	include_once('db_config.php');
+	
 	$servername = "127.0.0.1";
 	$username = "rootr";
 	$password = "324";
