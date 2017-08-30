@@ -106,9 +106,9 @@
  <div class="cont_form_login">
 <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
    <h2>LOGIN</h2>
- <input type="text" placeholder="Email" />
-<input type="password" placeholder="Password" />
-<button class="btn_login" onclick="cambiar_login()">LOGIN</button>
+ <input type="text" id="username1" placeholder="Username" />
+<input type="password" id="password1" placeholder="Password" />
+<button class="btn_login" onclick="login();">LOGIN</button>
   </div>
   
    <div class="cont_form_sign_up">
@@ -136,13 +136,50 @@
 	<script>
 		
 		
+		function login(){
+		var username = $('#username1').val();
+		var password = $('#password1').val();
+		
+		
+		var url = 'http://localhost/login/webservices/login.php?username='+username+'&password='+password;
+		$.post(url,
+		function(data, status){
+		
+			
+			var status = data[0].status;
+			
+			if(status == 1)
+			{
+				alert("Login Succesful");
+				window.location.href = 'http://localhost/login/html/index.html';
+			}
+			
+			
+		});
+		
+		}
+		
+		
+		
 		function register(){
 		var email = $('#email').val();
 		var username = $('#username').val();
 		var password = $('#password').val();
-		alert(email+ 'email');
-		alert(username+ 'username');
-		alert(password+ 'password');
+		
+		
+		$.post("http://localhost/login/webservices/register.php",
+		{
+			password: password,
+			email: email,
+			username: username
+		},
+		function(data, status){
+			
+			alert("User Succesfully ceated!");
+			window.location.href = 'http://localhost/login/html/index.html';
+		});
+		
+		
 		}
 		
 	</script>
