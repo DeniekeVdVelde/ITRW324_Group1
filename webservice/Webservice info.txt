@@ -1,3 +1,20 @@
-gaan kyk na die link vir info oor die database
+Maak n nuwe user in phpmyadmin met username 'rootr' en password '324'
 
-https://www.youtube.com/watch?v=FdwJkHgUpoU
+Maak in phpmyadmin n nuwe database genaamd: 'test'
+
+Maak n tabel genaamd: 'register'
+
+Daar moet columns wees naamlik: 'id', 'username', 'password', 'email'
+
+Maak n folder in xampp se 'htdocs' se folder genaamd: 'login'
+
+Maak 2 folders in die 'login' folder genaamd: 'html' en 'webservices'
+
+Plaas die php files in die webservices folder.
+
+Plaas die website se files in die html folder.
+
+Run die localhost se files soos= 'http://localhost/login/html/login.html'
+
+Register 'n nuwe account en login.
+

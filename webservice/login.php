@@ -1,19 +1,41 @@
 <?php
-	include_once('db_config.php');
 	
-	$servername = "127.0.0.1";
-	$username = "rootr";
-	$password = "324";
-	$db_name = "test";
-
-	// Create connection
-	$conn = mysqli_connect($servername, $username, $password);
-	mysql_select_db("$db_name") or die ("no database");
-
-	// Check connection
-	if (!$conn) {
-		die("Connection failed: " . mysqli_connect_error());
+	include_once('db_config.php');
+	error_reporting(E_ALL);
+	//Get the variables
+	$username = isset($_GET['username']) ?
+	mysql_real_escape_string($_GET['username']) : "";
+	$password = isset($_GET['password']) ?
+	mysql_real_escape_string($_GET['password']) : "";
+	//Login code here begin
+	$insertstatement = 'SELECT count(*) co FROM `register` WHERE
+	username="'.$username.'" AND password="'.$password.'" ';
+	
+	$query123 = mysql_query($insertstatement) or
+	trigger_error(mysql_error()." ".$insertstatement);
+	
+	while($r = mysql_fetch_array($query123)){
+		extract($r);
+	//echo "count star is $co";
 	}
-	echo "Connected successfully ";
-
+	
+	$co = (int)$co;
+	$customer_id = '';
+	if($co == 1)
+	{//user logged 
+		
+		$result = array();
+		$result[] = array("Login successful", "status" => 1);
+	}
+	
+	if($co != 1)
+	{//user not available
+		
+		$result = array();
+		$result[] = array("Login Failed", "status" => 0);
+	}
+	
+	/*Output Header*/
+	header('Content-type: apllication/json');
+	echo json_encode($result);
 ?>
