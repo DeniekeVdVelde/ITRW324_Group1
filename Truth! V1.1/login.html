@@ -132,14 +132,35 @@
 	<script>
 		
 		
+		
 		function login(){
 		var username = $('#username1').val();
 		var password = $('#password1').val();
 		
 		
-		var url = 'http://localhost/login/webservices/login.php?username='+username+'&password='+password;
-		$.post(url,
-		function(data, status){
+			
+			var url = 'http://localhost/login/webservices/login.php?username='+username+'&password='+password;
+			
+			$.post(url,
+			function(data, status){
+		
+			
+			var status = data[0].status;
+			
+			if(status == 0)
+			{
+				alert("Login Succesful");
+				window.location.href = 'http://localhost/login/html/Create_Article.html';
+			}
+			
+			
+		});
+			
+		
+		
+			var url = 'http://localhost/login/webservices/login.php?username='+username+'&password='+password;
+			$.post(url,
+			function(data, status){
 		
 			
 			var status = data[0].status;
@@ -151,9 +172,12 @@
 			}
 			
 			
-		});
+			});
 		
 		}
+		
+		
+		
 		
 		
 		
