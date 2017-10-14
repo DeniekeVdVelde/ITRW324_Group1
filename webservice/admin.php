@@ -9,7 +9,9 @@
 	mysql_real_escape_string($_GET['password']) : "";
 		
 	
-		$insertstatement = 'SELECT count(*) co FROM `register` WHERE
+		
+	
+		$insertstatement = 'SELECT count(*) co FROM `admin` WHERE
 		username="'.$username.'" AND password="'.$password.'" ';
 		
 		$query123 = mysql_query($insertstatement) or
@@ -35,13 +37,7 @@
 			$result = array();
 			$result[] = array("Login Failed", "status" => 0);
 		}
-	
-	
-	//Login code here begin
-	
-		
-	
-	
+
 	/*Output Header*/
 	header('Content-type: apllication/json');
 	echo json_encode($result);

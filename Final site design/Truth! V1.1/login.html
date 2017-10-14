@@ -105,19 +105,19 @@
  <div class="cont_form_login">
 <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
    <h2>LOGIN</h2>
- <input type="text" id="username1" placeholder="Username" />
-<input type="password" id="password1" placeholder="Password" />
-<button class="btn_login" onclick="login();" style="background-color:#fed136">LOGIN</button>
+ <input type="text" id="username1" placeholder="Username" required />
+<input type="password" id="password1" placeholder="Password" required />
+<button class="btn_login" onclick="logon();" style="background-color:#fed136">LOGIN</button>
   </div>
   
    <div class="cont_form_sign_up">
 <a href="#" onclick="ocultar_login_sign_up()"><i class="material-icons">&#xE5C4;</i></a>
      <h2>SIGN UP</h2>
-<input type="text" name="email" id="email" placeholder="Email" />
-<input type="text" name="username" id="username" placeholder="Username" />
-<input type="password" name="password" id="password" placeholder="Password" />
-<input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" />
-<button type="sign-up" class="btn_sign_up" onclick="register();" style="background-color:#fed136">SIGN UP</button>
+<input type="text" name="email" id="email" placeholder="Email" required />
+<input type="text" name="username" id="username" placeholder="Username" required />
+<input type="password" name="password" id="password" placeholder="Password" required />
+<input type="password" name="confirm-password" id="confirmpassword" placeholder="Confirm Password" required />
+<button type="sign-up" class="btn_sign_up" id="register_button" onclick="register();" style="background-color:#fed136">SIGN UP</button>
 
   </div>
 
@@ -140,43 +140,129 @@
 		var password = $('#password1').val();
 		
 		
+<<<<<<< HEAD:Final site design/Truth! V1.1/login.html
 		var url = 'http://localhost/login/webservices/login.php?username='+username+'&password='+password;
 		$.post(url,
 		function(data, status){
+=======
+			
+			
+				var url = 'http://localhost/login/webservices/login.php?username='+username+'&password='+password;
+				$.post(url,
+				function(data, status){
+			
+				
+				var status = data[0].status;
+				
+				
+				
+				
+				if(status == 1)
+				{
+					alert("Login Succesful");
+					window.location.href = 'http://localhost/login/html/index.html';
+				}
+				else
+				{
+					alert("Login Unsuccesful");
+					window.location.href = 'http://localhost/login/html/login.html';
+				}
+				});
+			
+		}
+		
+		function admin()
+		{
+			var username = $('#username1').val();
+			var password = $('#password1').val();
+		
+>>>>>>> Login+Reg:Truth! V1.1/login.html
 		
 			
-			var status = data[0].status;
 			
-			if(status == 1)
+				var url = 'http://localhost/login/webservices/admin.php?username='+username+'&password='+password;
+				$.post(url,
+				function(data, status){
+			
+				
+				var status = data[0].status;
+				
+				
+				
+				
+				if(status == 1)
+				{
+					alert("Login Succesful");
+					window.location.href = 'http://localhost/login/html/Create_Article.html';
+				}
+				else
+				{
+					alert("Login Unsuccesful");
+					window.location.href = 'http://localhost/login/html/login.html';
+				}
+				});
+		}
+		
+		function logon()
+		{
+			var username = $('#username1').val();
+			if(username =="admin")
 			{
-				alert("Login Succesful");
-				window.location.href = 'http://localhost/login/html/index.html';
+				admin();
+			}
+			else
+			{
+				login();
 			}
 			
 			
+<<<<<<< HEAD:Final site design/Truth! V1.1/login.html
 		});
 		
 		}
 		
 		
 		
+=======
+			
+			
+		}
+		
+		
+>>>>>>> Login+Reg:Truth! V1.1/login.html
 		function register(){
 		var email = $('#email').val();
 		var username = $('#username').val();
 		var password = $('#password').val();
+		var confirmpassword = $('#confirmpassword').val();
 		
 		
-		$.post("http://localhost/login/webservices/register.php",
+		
+		if(password == confirmpassword && username != "" && email != "")
 		{
-			password: password,
-			email: email,
-			username: username
-		},
-		function(data, status){
 			
-			alert("User Succesfully ceated!");
-			window.location.href = 'http://localhost/login/html/index.html';
-		});
+			$.post("http://localhost/login/webservices/register.php",
+			{
+				password: password,
+				email: email,
+				username: username
+			},
+			function(data, status){
+				
+				alert("User Succesfully ceated!");
+				window.location.href = 'http://localhost/login/html/index.html';
+			});
+		}
+		else
+		{
+			alert("Invalid field paramaters. Fill in fields and check password");
+		}
+		
+		
+		
+			
+		
+		
 		
 		
 		}
