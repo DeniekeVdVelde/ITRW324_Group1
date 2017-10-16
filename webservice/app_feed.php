@@ -11,17 +11,18 @@
 	$articleImageLocation = isset($_GET['art_image_location']) ?
 	mysql_real_escape_string($_GET['art_image_location']) : "";
 	
+	$selectStatement = "SELECT art_title , art_date, art_image_location FROM tbl_validated;";
+	$rows = mysqli_query($con,$selectStatement);
+	$i=-1;
+
+	while($row = mysqli_fetch_array($rows))
+	{
+		$i++;
+		$article[$i] = array($row['art_title'], $row['art_date'], $row['art_image_location']);
+	}
 	
-	$response = array();
-	$selectStatement = 'SELECT art_title , art_date, art_image_location FROM `tbl_validated`';
-	$row = mysqli_fetch_array(mysqli_query($con,$selectStatement));
-	$articleTitle = $row[0];
-	$articleDate = $row[1];
-	$articleImageLocation = $row[2];
-	
-	$response[] = array("art_title" => $articleTitle, "art_date" => $articleDate, "art_image_location" => $articleImageLocation);
 	header('Content-type: application/json');
-	echo json_encode($response);
+	echo json_encode($article);
 	
 		
 ?>
