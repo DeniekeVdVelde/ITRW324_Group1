@@ -4,7 +4,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 
-                <a class="navbar-brand page-scroll" href="index.html">Truth!</a>
+                <a class="navbar-brand page-scroll" href="index.php">Truth!</a>
             </div>
 
          <!-- Collect the nav links, forms, and other content for toggling -->
@@ -13,10 +13,7 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="Edit_Profile.html">Edit Profile</a>
-                    </li>
-        
+                   
                   
                 </ul>
             </div>

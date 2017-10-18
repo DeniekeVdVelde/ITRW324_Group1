@@ -1,6 +1,3 @@
-<?php 
-include 'core/init.php';   
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,13 +38,13 @@ include 'core/init.php';
     
     <div class="cont_back_info">
        <div class="cont_img_back_grey">
-       <img src="https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_960_720.jpg" alt="" />
+       <img src="img/login-register.jpg" alt="" />
        </div>
        
     </div>
 <div class="cont_forms" >
     <div class="cont_img_back_">
-       <img src="https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_960_720.jpg" alt="" />
+       <img src="img/login-register.jpg" alt="" />
        </div>
  <div class="cont_form_login">
 <a href="#" onclick="ocultar_login_sign_up()" ><i class="material-icons">&#xE5C4;</i></a>
