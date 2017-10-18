@@ -15,25 +15,12 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#services">Features</a>
-                    </li>
-                   
-                    <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-					<li>
 						
-					<li><a href="Top_Stories_Unregistered.php">Top stories</a>
+					<li><a href="Top_Stories.php">Top stories</a>
                     </li>
-					<li><a href="login.php">Login/Register</a>
-                    </li>
-				
+			
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="Create_Article.php">New Article</a>
                     </li>
 					
 					

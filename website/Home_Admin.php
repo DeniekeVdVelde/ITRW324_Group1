@@ -6,20 +6,10 @@
 
 <body id="page-top" class="index">
 
-<?php include 'includes/navigation.php'; ?> 
+<?php include 'includes/admin_navigation.php'; ?> 
 
 <?php include 'includes/header.php'; ?>     
-
-<?php include 'includes/services.php'; ?>  
-
-<?php include 'includes/about.php'; ?>      
-
-<?php include 'includes/team.php'; ?>       
-
-<?php include 'includes/resources.php'; ?>       
-
-<?php include 'includes/contact.php'; ?>    
-
+   
 <?php include 'includes/footer.php'; ?>    
 
 

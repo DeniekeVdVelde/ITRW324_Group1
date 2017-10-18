@@ -6,7 +6,7 @@
 
 <body id="page-top" class="index">
 
-<?php include 'includes/navigation.php'; ?> 
+<?php include 'includes/user_navigation.php'; ?> 
 
 <?php include 'includes/header.php'; ?>     
 

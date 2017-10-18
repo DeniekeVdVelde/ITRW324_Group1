@@ -27,11 +27,9 @@
                     </li>
 					<li>
 						
-					<li><a href="Top_Stories_Unregistered.php">Top stories</a>
+					<li><a href="Top_Stories.php">Top stories</a>
                     </li>
-					<li><a href="login.php">Login/Register</a>
-                    </li>
-				
+					
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>

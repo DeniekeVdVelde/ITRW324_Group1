@@ -1,27 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include 'includes/head.php'; ?>
+<?php include "includes/post_head.php" ?>
 
 <body id="page-top" class="index">
 
-<?php include 'includes/navigation.php'; ?> 
+<?php include "includes/post_navigation.php" ?>   
 
-<?php include 'includes/header.php'; ?>     
+  </head>
 
-<?php include 'includes/services.php'; ?>  
+ </head>
+<?php include "includes/post_header.php" ?>    
+    
+<?php include "includes/post_content.php" ?>  
 
-<?php include 'includes/about.php'; ?>      
-
-<?php include 'includes/team.php'; ?>       
-
-<?php include 'includes/resources.php'; ?>       
-
-<?php include 'includes/contact.php'; ?>    
-
-<?php include 'includes/footer.php'; ?>    
-
+<?php include "includes/post_ratings.php" ?>  
+		
+		
+<br></br><br></br><br></br>
+    <hr> 
+    
+<?php include "includes/post_footer.php" ?>  
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
