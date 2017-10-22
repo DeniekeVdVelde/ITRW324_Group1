@@ -4,9 +4,9 @@
 	error_reporting(E_ALL);
 	//Get the variables
 	$username = isset($_GET['username']) ?
-	mysql_real_escape_string($_GET['username']) : "";
+	mysqli_real_escape_string($conn,$_GET['username']) : "";
 	$password = isset($_GET['password']) ?
-	mysql_real_escape_string($_GET['password']) : "";
+	mysqli_real_escape_string($conn,$_GET['password']) : "";
 		
 	
 		
@@ -14,10 +14,10 @@
 		$insertstatement = 'SELECT count(*) co FROM `admin` WHERE
 		username="'.$username.'" AND password="'.$password.'" ';
 		
-		$query123 = mysql_query($insertstatement) or
-		trigger_error(mysql_error()." ".$insertstatement);
+		$query123 = mysqli_query($conn,$insertstatement) or
+		trigger_error(mysqli_error()." ".$insertstatement);
 		
-		while($r = mysql_fetch_array($query123)){
+		while($r = mysqli_fetch_array($query123)){
 			extract($r);
 		//echo "count star is $co";
 		}

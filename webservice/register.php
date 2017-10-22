@@ -4,19 +4,25 @@
 	//Get the variables
 
 	$username = isset($_POST['username']) ?
-	mysql_real_escape_string($_POST['username']) : "";
+	mysqli_real_escape_string($conn,$_POST['username']) : "";
 	$password = isset($_POST['password']) ?
-	mysql_real_escape_string($_POST['password']) : "";
+	mysqli_real_escape_string($conn,$_POST['password']) : "";
 	$confirmpassword = isset($_POST['confirmpassword']) ?
-	mysql_real_escape_string($_POST['confirmpassword']) : "";
+	mysqli_real_escape_string($conn,$_POST['confirmpassword']) : "";
 	$email = isset($_POST['email']) ?
-	mysql_real_escape_string($_POST['email']) : "";
+	mysqli_real_escape_string($conn,$_POST['email']) : "";
 	//
+
+	//echo $username;
+	//echo $password;
+	//echo $confirmpassword;
+	//echo $email;
+	
 	//Register code here begin
 	$insertstatement = 'INSERT INTO 
 	`register`(`id`,`username`,`password`,`email`) VALUES 
 	(NULL,"'.$username.'","'.$password.'","'.$email.'")';
-	$query123 = mysql_query($insertstatement);
+	$query123 = mysqli_query($conn,$insertstatement);
 	
 	echo "$query123";
 	//Register code ends
