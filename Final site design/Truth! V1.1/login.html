@@ -131,7 +131,7 @@
 
 	<script type="text/javascript" src="js/script.js"></script>
     <script src="js/index.js"></script>
-	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
 		
 		
@@ -140,14 +140,9 @@
 		var password = $('#password1').val();
 		
 		
-<<<<<<< HEAD:Final site design/Truth! V1.1/login.html
-		var url = 'http://localhost/login/webservices/login.php?username='+username+'&password='+password;
-		$.post(url,
-		function(data, status){
-=======
 			
 			
-				var url = 'http://localhost/login/webservices/login.php?username='+username+'&password='+password;
+				var url = 'http://54.229.185.115/login.php?username='+username+'&password='+password;
 				$.post(url,
 				function(data, status){
 			
@@ -160,12 +155,12 @@
 				if(status == 1)
 				{
 					alert("Login Succesful");
-					window.location.href = 'http://localhost/login/html/index.html';
+					window.location.href = 'http://54.229.185.115/index.html';
 				}
 				else
 				{
 					alert("Login Unsuccesful");
-					window.location.href = 'http://localhost/login/html/login.html';
+					window.location.href = 'http://54.229.185.115/login.html';
 				}
 				});
 			
@@ -176,11 +171,10 @@
 			var username = $('#username1').val();
 			var password = $('#password1').val();
 		
->>>>>>> Login+Reg:Truth! V1.1/login.html
 		
 			
 			
-				var url = 'http://localhost/login/webservices/admin.php?username='+username+'&password='+password;
+				var url = 'http://54.229.185.115/admin.php?username='+username+'&password='+password;
 				$.post(url,
 				function(data, status){
 			
@@ -193,12 +187,12 @@
 				if(status == 1)
 				{
 					alert("Login Succesful");
-					window.location.href = 'http://localhost/login/html/Create_Article.html';
+					window.location.href = 'http://54.229.185.115/Create_Article.html';
 				}
 				else
 				{
 					alert("Login Unsuccesful");
-					window.location.href = 'http://localhost/login/html/login.html';
+					window.location.href = 'http://54.229.185.115/login.html';
 				}
 				});
 		}
@@ -208,6 +202,7 @@
 			var username = $('#username1').val();
 			if(username =="admin")
 			{
+				alert("admin");
 				admin();
 			}
 			else
@@ -216,32 +211,26 @@
 			}
 			
 			
-<<<<<<< HEAD:Final site design/Truth! V1.1/login.html
-		});
-		
-		}
-		
-		
-		
-=======
 			
 			
 		}
 		
 		
->>>>>>> Login+Reg:Truth! V1.1/login.html
 		function register(){
 		var email = $('#email').val();
 		var username = $('#username').val();
 		var password = $('#password').val();
 		var confirmpassword = $('#confirmpassword').val();
 		
-		
+		alert(username);
+		alert(password);
+		alert(confirmpassword);
+		alert(email);
 		
 		if(password == confirmpassword && username != "" && email != "")
 		{
 			
-			$.post("http://localhost/login/webservices/register.php",
+			$.post("http://54.229.185.115/register.php",
 			{
 				password: password,
 				email: email,
@@ -250,21 +239,13 @@
 			function(data, status){
 				
 				alert("User Succesfully ceated!");
-				window.location.href = 'http://localhost/login/html/index.html';
+				window.location.href = 'http://54.229.185.115/index.html';
 			});
 		}
 		else
 		{
 			alert("Invalid field paramaters. Fill in fields and check password");
 		}
-		
-		
-		
-			
-		
-		
-		
-		
 		}
 		
 	</script>

@@ -1,28 +1,41 @@
 <?php
-
-	include_once('config.php');
+	include_once('db_config.php');
 	error_reporting(E_ALL);
-	//Get the variables
-	
 	$articleTitle = isset($_GET['art_title']) ?
-	mysql_real_escape_string($_GET['art_title']) : "";
+	mysqli_real_escape_string($_GET['art_title']) : "";
+	$articleSummary= isset($_GET['art_summary']) ?
+	mysqli_real_escape_string($_GET['art_summary']) : "";
 	$articleDate = isset($_GET['art_date']) ?
-	mysql_real_escape_string($_GET['art_date']) : "";
+	mysqli_real_escape_string($_GET['art_date']) : "";
 	$articleImageLocation = isset($_GET['art_image_location']) ?
-	mysql_real_escape_string($_GET['art_image_location']) : "";
+	mysqli_real_escape_string($_GET['art_image_location']) : "";
+	$selectStatement = "SELECT art_title,art_summary,art_date, art_image_location FROM `tbl_validated` ORDER BY art_date DESC";
+	$result = mysqli_query($conn,$selectStatement)or
+		trigger_error(mysqli_error()." ".$selectStatement);
 	
-	$selectStatement = "SELECT art_title , art_date, art_image_location FROM tbl_validated;";
-	$rows = mysqli_query($con,$selectStatement);
-	$i=-1;
-
-	while($row = mysqli_fetch_array($rows))
+	while($row = mysqli_fetch_assoc($result))
 	{
-		$i++;
-		$article[$i] = array($row['art_title'], $row['art_date'], $row['art_image_location']);
+		if ($row["art_date"])
+		{
+			$date = new DateTime($row["art_date"]);
+			$row["art_date"] = $date->format('d-M-Y');
+		}
+		
+		$arr[] = ($row);		
 	}
 	
-	header('Content-type: application/json');
-	echo json_encode($article);
-	
-		
+	function utf8ize($d) {
+    if (is_array($d)) {
+        foreach ($d as $k => $v) {
+            $d[$k] = utf8ize($v);
+			
+        }
+    } else if (is_string ($d)) {
+        return utf8_encode($d);
+    }
+    return $d; }
+
+	header('Content-type:application/json');
+	echo json_encode(utf8ize($arr ));
+
 ?>
